@@ -6,6 +6,8 @@ nome = 'ACHILLES LIGABO JUNIOR'
 cref = '019583-G/SP'
 
 
+
+#Funcao para inserir o valor a busca do site
 def getCref():
     input_element = driver.find_element_by_xpath('/html/body/section/div/div/div[2]/div/div/div[1]/label/input')
     input_element.send_keys(cref)
@@ -16,6 +18,7 @@ def getCref():
         result = {'Cref': tds[1].text.split(" ")[1],
                   'Nome': tds[2].text}
 
+    #Validacao das variaveis
     if result['Nome'] == nome and result['Cref'] == cref:
         print('CREF Válido')
     else:
