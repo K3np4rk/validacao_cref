@@ -26,7 +26,14 @@ def getCref():
 
 
 try:
-    driver = webdriver.Chrome()
+    #Executa o script abrindo o navegador
+    #driver = webdriver.Chrome()
+
+    #Executa o script sem abrir o navegador
+    op = webdriver.ChromeOptions()
+    op.add_argument('headless')
+    driver = webdriver.Chrome(options = op)
+
     url = 'https://www.confef.org.br/confef/registrados/'
     driver.get(url)
     getCref()
